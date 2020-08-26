@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    {% load static %}
+    <link type="text/css" href="{% static 'design.css' %}">
+    <style>
+
+.jelly{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    background-position:center center;
+    background-attachment: fixed;
+    
+}
+
+.dna{
+  background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    background-position:center center;
+    background-attachment: fixed;
+}
+
+.dropbtn {
+  background-color: white;
+  color: grey;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+
+}
+
+.dropdownp {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdownp:hover .dropdown-content {display: block;}
+
+.dropdownp:hover .dropbtn {background-color: rgb(90, 168, 244);}
+.nondropdown:hover .dropbtn{background-color: rgb(90, 168, 244);}
+
+.nacbar .navbarnav{
+    display: inline-block;
+    float:none;
+    vertical-align: top;
+}
+.navbar .navbar-collapse{
+    text-align:center;
+}
+
+.navbar .navbar-nav{
+  line-height: 30px;
+}
+#logo{
+  width: 70px;
+  height: 70px;
+}
+
+h1{
+  padding: 250px;
+  font-weight: 700;
+  color: white;
+}
+h4{
+  color: white;
+  position: relative;
+  top: -210px;
+}
+
+.interestlink{
+    position: absolute;
+    left: 580px;
+    margin-top: .5cm;
+}
+p{
+  color: white;
+  margin-top: 3cm;
+}
+
+#section1 {padding-top:50px;height:600px;}
+#section2 {padding-top:50px;height:400px;color: #fff; background-color:darkblue;}
+#section3 {padding-top:50px;height:400px;}
+#section4 {padding-top:50px;height:400px;color: #fff; background-color:darkblue;}
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 mb-2 bg-secondary text-white fixed-top">
+        <a class="navbar-brand" href="#">
+          {% load static %}
+        <img src="{% static 'circle-cropped.png' %}" alt="My image" id="logo">
+        Coding For Medicine                                 
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active nondropdown">
+              <li>
+                <div class="dropdownp">
+                  <a href = "#">
+                    <button class="dropbtn">Home</button>
+                  </a>
+                    <div class="dropdown-content">
+                    </div>
+                  </div>
+            </li>
+            </li>
+           
+            <li>
+                <div class="dropdownp">
+                  <a href="{% url 'aboutus' %}">
+                    <button class="dropbtn">About Us</button>
+                  </a>
+                    <div class="dropdown-content">
+                      <a href="#">Who We Are</a>
+                      <a href="#">Medicine</a>
+                      <a href="#">Programming</a>
+                      <a href="#">Officers</a>
+                    </div>
+                  </div>
+            </li>
+
+            <li>
+              <div class="dropdownp">
+                <a href = "{% url 'blog' %}">
+                  <button class="dropbtn">Blog</button>
+                </a>
+                  <div class="dropdown-content">
+                  </div>
+                </div>
+          </li>
+
+            <li>
+                <div class="dropdownp">
+                    <button class="dropbtn">Resoruces</button>
+                    <div class="dropdown-content">
+                      <a href="#">Social Media</a>
+                      <a href ="#">Documents</a>
+                    </div>
+                  </div>
+            </li>
+
+            <li>
+              <div class="dropdownp dropdown-menu-right text-right" dir="rtl">
+                  <button class="dropbtn">Contact Us</button>
+                  <div class="dropdown-content">
+                  </div>
+                </div>
+          </li>
+            
+          </ul>
+        </div>
+      </nav>
+
+      <div id="section1" class="container-fluid jelly" style="background-image: url('{% static 'jelly.png' %}')">
+        <h1><center>Coding For Medicine</center></h1>
+        <h4><center>Discoveries Made Easier</center></h4>
+    </div>
+
+    <div id="section2" class="container-fluid">
+      <h2><center>Join Us Today</center></h2>
+      <a href = "https://docs.google.com/forms/d/e/1FAIpQLSfxWPZoWtJvzwy-6wRMEZ8VQoBgURM7jSZZe311NDYGOug_ZQ/viewform?usp=sf_link" target="_blank">
+        <button class="interestlink dropbtn">Click Here</button>
+      </a>
+      <p><center>Insert mini description of club</center></p>
+    </div>
+
+    <div id="section3" class="container-fluid dna" style="background-image: url('{% static 'dnaimage.png' %}')">
+      <p>description idk lmao</p>
+    </div>
+
+    <div id="section4" class="container-fluid">
+      <h2>Sponsors</h2>
+      <p>C4M Dr.Samanta</p>
+    </div>
+
+
+</body>
+</html>
+<!-- if u see this, it has been sucesfully pushed -->
+
+
